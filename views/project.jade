@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    p.project-title
+        a=title
+    div.project-container
+        each item in fileList
+            div(id=item.name.replace(/\..*/, '')).item
+                h3=item.name
+                a(href=item.url)
+                    button download
+                a(onclick='copyTextToClipboard("' + item.url +'", "'+ item.name.replace(/\..*/, '') +'")').copy 复制链接
+                a(onclick='deleteProject("' + item.url +'")').delete ×
+                p
+                    span 最近更新时间：
+                    span= item.lastModified

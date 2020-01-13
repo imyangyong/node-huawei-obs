@@ -1,0 +1,142 @@
+.project-title {
+  position: relative;
+}
+
+.project-title a{
+  font-size: 40px;
+  font-weight: bold;
+  color:#b30857f0;
+  text-decoration:none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.project-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin:  0 auto;
+  position:relative;
+}
+
+.item{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin: 20px 20px;
+  transition: all .2s linear;
+  border-radius: 8px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.active {
+  transform: skew(-5deg) scale(.5,.2) perspective(100px) rotateX(10deg)
+}
+
+.item:hover {
+  -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.05), -5px 0 10px rgba(0,0,0,.05);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.05), -5px 0 10px rgba(0,0,0,.05);
+  -webkit-transform: translate3d(0,-4px,0);
+  transform: translate3d(0,-4px,0);
+}
+
+.project-container button{
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  padding: 4px 12px;
+  background-color: #269CE9;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 13px arial, helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #555;
+  
+  background-color: #ddd;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background-image: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -ms-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  background-clip: padding-box; /* Fix bleeding */
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+  text-shadow: 0 1px 0 rgba(255,255,255, .9);
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.project-container button:hover{
+  background-color: #eee;
+  color: #555;
+}
+
+.project-container p span:nth-child(1) {
+  font-size: 13px;
+  display: inline-block;
+  color: #333;
+}
+
+.project-container p span:nth-child(2) {
+  color: #fff;
+}
+
+.project-container p span:nth-child(1) {
+  margin: 20px 0;
+}
+
+.project-container .copy {
+  cursor: pointer;
+  font-size: 13px;
+  display: block;
+  margin-top: 10px;
+}
+
+.disabled {
+  pointer-events: none;
+  color: #bbbbbb;
+}
+
+.delete {
+  font-size: 10px;
+  color: #770b0b;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}

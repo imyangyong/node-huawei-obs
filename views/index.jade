@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    h1.profile-name
+      span(style='color: #b30857f0')='【全税研发部】'
+      span(style='color: #b30857f0')='前端项目资源'
+
+    div.profile-position
+      ul
+        each item in resources
+          li
+            a(href=item.url)=item.name
+
+
