@@ -23,6 +23,7 @@ body {
 .container {
   box-shadow: 0 0 20px rgba(0,0,0,.2);
   width: 80%;
+  overflow: hidden;
   margin: 0 auto;
   flex-direction: column;
   max-width: 600px;
@@ -42,7 +43,11 @@ body {
 
 
 .profile-name     { grid-area: name; }
-.profile-position { grid-area: position; }
+.profile-position {
+  grid-area: position;
+  max-height: 500px;
+  overflow: scroll;
+}
 
 a {
   color: #0066dd;

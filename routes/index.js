@@ -40,14 +40,14 @@ router.get(/.*/, function(req, res, next) {
   if ( req.headers.host.search(/^dxhy/) === -1 ) {
     res.writeHead(403, {'content-type': 'text/html; charset=utf-8'});
     res.write("<h1 align='center' style='color: red'>大象慧云资源，请使用【dxhy】作为三级域名</h1>");
-    
+
     res.end();
     return;
   }
   
   getResources().then(files => {
     resources = files;
-    req.url.replace('/', '') === '' ? res.render('index', { title: '前端项目资源', resources, }) : next();
+    req.url.replace('/', '') === '' ? res.render('index', { title: '前端资源', resources, }) : next();
   });
 });
 

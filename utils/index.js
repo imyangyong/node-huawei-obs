@@ -67,9 +67,10 @@ function readFile(project) {
       if (result.CommonMsg.Status < 300) {
         console.log('List all objects in folder ' + project + '/ \n');
         for (let j = 0; j < result.InterfaceResult.Contents.length; j++) {
+          var fileName = result.InterfaceResult.Contents[j]['Key'].replace(/[^\/]+\//, '');
           files.push({
-            name: result.InterfaceResult.Contents[j]['Key'].replace(/[^\/]+\//, ''),
-            url: CDN_DOMAIN + '/' + result.InterfaceResult.Contents[j]['Key'],
+            name: fileName.replace(/_[^\.]+/, ''),
+            url: CDN_DOMAIN + '/' + project + '/' + encodeURIComponent(fileName),
             lastModified: new Date(result.InterfaceResult.Contents[j]['LastModified']).format("yyyy-MM-dd hh:mm:ss")
           })
         }
